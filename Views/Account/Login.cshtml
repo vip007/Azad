@@ -1,0 +1,127 @@
+﻿@{
+    Layout = null;
+}
+<html lang="en" class="body-full-height">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOS Login</title>
+
+    @*<link rel="icon" type="image/x-icon" href="/otherfiles/global_assets/images/favicon.ico" />*@
+
+    <link href="/otherfiles/assets/css/fontfamily.css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="/otherfiles/Light/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="/otherfiles/Light/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/otherfiles/Light/assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
+    <link href="/otherfiles/Light/assets/css/layout.min.css" rel="stylesheet" type="text/css">
+    <link href="/otherfiles/Light/assets/css/components.min.css" rel="stylesheet" type="text/css">
+    <link href="/otherfiles/Light/assets/css/colors.min.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script src="/otherfiles/global_assets/js/main/jquery.min.js"></script>
+    <script src="/otherfiles/global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="/otherfiles/global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script src="/otherfiles/global_assets/js/plugins/forms/validation/validate.min.js"></script>
+    <script src="/otherfiles/global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+
+    <script src="/otherfiles/assets/js/app.js"></script>
+    <script src="/otherfiles/global_assets/js/demo_pages/login_validation.js"></script>
+    <!-- /theme JS files -->
+
+    <style>
+
+        #bodyBack {
+            /* The image used */
+            background-image: url("img_girl.jpg");
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+
+    <div class="page-content " id="bodyBack">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content d-flex justify-content-center align-items-center pt-0">
+
+                <!-- Login card -->
+                <form class="login-form form-validate" asp-action="login" method="post" novalidate="novalidate">
+                    <div class="card mb-0" style="border-radius:30px; opacity: 0.8;">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <img src="/otherfiles/global_assets/images/logo.png" alt="" style="width: 249px;">
+                                <h5 class="mb-0">Login to your account</h5>
+                                <span class="d-block text-muted">
+                                    @if (ViewBag.msg != null)
+                                    {
+                                        <p style="color:red"><strong>@ViewBag.msg</strong></p>
+                                    }
+                                </span>
+                            </div>
+
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                <input type="text" class="form-control" name="userName" placeholder="Username" required="">
+                                <div class="form-control-feedback">
+                                    <i class="icon-user text-muted" style="padding-top: 10px;"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                                <div class="form-control-feedback">
+                                    <i class="icon-lock2 text-muted" style="padding-top: 10px;"></i>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Sign in <i class="icon-circle-right2 ml-2"></i></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+                <!-- /login card -->
+
+            </div>
+        </div>
+        <!-- /main content -->
+
+    </div>
+
+    <script>
+        //Array of images which you want to show: Use path you want.
+        //var images = new Array('/otherfiles/global_assets/images/bg1.jpg', '/otherfiles/global_assets/images/bg2.jpg', '/otherfiles/global_assets/images/bg3.jpg');
+        //var nextimage = 0;
+        //doSlideshow();
+
+        //function doSlideshow() {
+        //    if (nextimage >= images.length) { nextimage = 0; }
+        //    $("#bodyBack")
+        //        .css('background-image', 'url("' + images[nextimage++] + '")')
+        //        .fadeIn(500, function () {
+        //            setTimeout(doSlideshow, 3000);
+        //        });
+        //}
+    </script>
+
+
+</body>
+</html>
